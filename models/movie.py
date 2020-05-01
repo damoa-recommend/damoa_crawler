@@ -1,4 +1,4 @@
-from models.connection import REDIS_0
+from models.connection import REDIS_0, MYSQL
 import json
 
 class Movie(object):
