@@ -73,7 +73,11 @@ class Naver(Crawler):
     href = item.get('href')
     parts = urlparse(href)
     product_no = parse_qs(parts.query)['productNo'][0]
-    title = item.select_one('strong').text
+    title = item.select_one('strong')
+    for tag in title.select('em'):
+      tag.extract()
+
+    title = title.text
     body = self.detail(product_no)
 
     return href, '%s_%s'%(Naver.PRE_FIX, product_no), title, body

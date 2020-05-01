@@ -6,7 +6,7 @@ class Movie(object):
   def __init__(self, href, product_no, title, body, category):
     self.href = str(href)
     self.product_no = str(product_no)
-    self.title = str(title)
+    self.title = str(title.replace('\n', '').replace('\t', '').replace('\r', ''))
     self.body = str(body.replace('\n', '').replace('\t', '').replace('\r', '').replace('  ', ''))
     self.category = str(category)
 
