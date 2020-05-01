@@ -44,3 +44,19 @@ config/config.json
 ```sh
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 ```
+
+### 실행
+
+* 버전확인
+
+```sh
+$ python app.py -v
+$ python app.py --version
+```
+
+```sh
+$ export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+
+$ python app.py --procs [프로세스 수]
+$ python app.py -p [프로세스 수]
+```
