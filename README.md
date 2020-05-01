@@ -19,8 +19,14 @@ config/config.json
 {
   "develop": {
     "redis": {
-      "HOST": "localhost",
+      "HOST": "",
       "PORT": 6379
+    },
+    "mysql": {
+      "USER":"",
+      "PASSWORD":"",
+      "HOST":"",
+      "DB":""
     }
   }
 }
