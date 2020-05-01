@@ -50,7 +50,7 @@ class Naver(Crawler):
       sleep = 0
 
       if not movie.is_exist_by_redis(): 
-        movie.save_redis()
+        movie.save()
         results.append(movie)
         sleep = 1
         

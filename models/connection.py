@@ -2,7 +2,11 @@ import redis
 from config.config import config
 import pymysql
 
-REDIS_0 = redis.Redis(host=config['redis']['HOST'], port=config['redis']['PORT'], db=0)
+REDIS_0 = redis.Redis(
+  host=config['redis']['HOST'], 
+  port=config['redis']['PORT'], 
+  db=0
+)
 
 MYSQL = pymysql.connect(
     user=config['mysql']['USER'] ,
@@ -11,3 +15,6 @@ MYSQL = pymysql.connect(
     db=config['mysql']['DB'] ,
     charset='utf8'
 )
+
+def get_mysql_connection():
+  return MYSQL.cursor(pymysql.cursors.DictCursor), MYSQL
