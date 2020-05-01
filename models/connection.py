@@ -8,13 +8,13 @@ REDIS_0 = redis.Redis(
   db=0
 )
 
-MYSQL = pymysql.connect(
+
+def get_mysql_connection():
+  MYSQL = pymysql.connect(
     user=config['mysql']['USER'] ,
     passwd=config['mysql']['PASSWORD'] ,
     host=config['mysql']['HOST'] ,
     db=config['mysql']['DB'] ,
     charset='utf8'
-)
-
-def get_mysql_connection():
+  )
   return MYSQL.cursor(pymysql.cursors.DictCursor), MYSQL

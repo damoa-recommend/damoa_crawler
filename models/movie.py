@@ -25,6 +25,7 @@ class Movie(object):
     cursor, mysql = get_mysql_connection()
     cursor.execute(sql, (self.href, self.product_no, self.title, self.body, self.category))
     mysql.commit()
+    # mysql.close()
 
   def save_redis(self):
     REDIS_0.set(self.product_no, json.dumps({

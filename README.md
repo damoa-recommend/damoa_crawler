@@ -31,3 +31,16 @@ config/config.json
   }
 }
 ```
+
+* 
+
+```sh
++[__NSPlaceholderDate initialize] may have been in progress in another thread when fork() was called.
++[__NSPlaceholderDate initialize] may have been in progress in another thread when fork() was called. We cannot safely call it or ignore it in the fork() child process. Crashing instead. Set a breakpoint on objc_initializeAfterForkError to debug.
+```
+
+해당 에러가 발생한다면 다음과 같이 환경변수 설정
+
+```sh
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+```
