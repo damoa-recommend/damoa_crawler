@@ -19,7 +19,9 @@ def n(start_page= 1, end_page= 11):
 
 
 def get_process_num(num):
-  # [(1, 11), (11, 21), (21, 31), (31, 41), (41, 51)]
+  '''
+    [(1, 11), (11, 21), (21, 31), (31, 41), (41, 51)]
+  '''
 
   return [(i * 10 + 1, (i+1) * 10 + 1) for i in range(0, num)]
 
@@ -27,7 +29,6 @@ def get_process_num(num):
 @click.command()
 @click.option('-p', '--procs', default=1, help="Process Number")
 @click.option('-v', '--version', is_flag=True, help="Show version of this program.")
-# @click.argument('start')
 def main(version, procs):
   if version:
     print('Version: 1.0.0')
